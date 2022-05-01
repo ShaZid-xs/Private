@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    color: #fff;
+    background: linear-gradient(45deg, rgb(0, 174, 255), rgb(108, 208, 255),rgb(130, 76, 255) , #fff);
+}
+
+.card{
+    height: 400px;
+    width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.card:before{
+    content: '';
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: linear-gradient(#4dff03, #00d0ff);
+    animation: spin 2s linear infinite;
+}
+
+.container .card:nth-child(2):before{
+    background: linear-gradient(#ffbc00, #ff0058);
+}
+.container .card:nth-child(3):before{
+    
+    background: linear-gradient(#03a9f4, #ff0058); 
+}
+
+.card .content{
+    height: 97%;
+    width: 96%;
+    background: url(./3.jpg);
+    border-radius: 10px;
+    color: rgba(61, 56, 56, 0);
+    padding: 10px 20px;
+    z-index: 100;
+    text-align: center;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+
+.card .content h1{
+    margin-top: 30px;;
+}
+
+.card .content p{
+    margin-top: 20px;
+    text-align: left;
+    font-size: 20px
+}
+
+.card:hover .content{
+    background: rgba(0, 0, 0, 0.6);    
+    color: #fff;
+}
+
+.card .content:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    top: 0;
+    transition: 0.5s ease-in-out;
+    
+}
+
+.card:hover .content:after{
+    background: rgba(255, 255, 255, 0.082);
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
